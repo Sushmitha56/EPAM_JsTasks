@@ -12,34 +12,33 @@ class Calculator{
         this.r=r;
         this.t=t;
     }
-    add(){}
-    subtract(){}
-    multiply(){
-        var mul=this.p*this.t*this.r
-        console.log("mul",mul);
+    add(x,y){
+        let sum=x+y;
+        // console.log("summmmmmmm,",sum);
+        return sum;
+    }
+    subtract(x,y){
+        let sub1=x-y;
+        // console.log("subcvb",sub1);
+        return sub1;
+    }
+    multiply(...args){
+        let mul=1;
+        for(let i of args){
+            mul*=i;
+            // console.log("muliiiiiiii",mul);
+        }
+        // console.log("mul",mul);
         return mul;
     }
-    divide(){
-        var div=this.multiply()/100;
-        console.log("div",div);
+    divide(x,y){
+        var div=x/y;
+        // console.log("div",div);
+        return div;
     }
 
     
 
 }
-class IntrestCalculator extends Calculator{
-    constructor(p,r,t){
-        super(p,r,t)
-    }
-    simpleintrest(mul){
-        let si=mul/100
-        console.log("simple intrest", si);
-
-    }
-    compoundintrest(){}
-
-}
-
-var si2=new IntrestCalculator(10000,2,13)
-x=si2.multiply()
-si2.simpleintrest(x);
+var calculator=new Calculator()
+module.exports=calculator;
